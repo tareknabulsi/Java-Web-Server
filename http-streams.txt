@@ -1,0 +1,250 @@
+********************* MY LISTENER CAPTURED OUTPUT *********************
+*
+***
+The following two GET requests were produced by using Firefox and typing in 
+http://localhost:2540/dog.txt and http://localhost:2540/cat.html respectively
+***
+*
+desktop > java MyListener
+Tarek Nabulsi's port listener starting up, listening at port 2540.
+
+GET /dog.txt HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+GET /cat.html HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+
+********************* CONDOR HTTP STREAM TO MYTELNET CLIENT *********************
+*
+***
+The following is 80 output from MyTelnet Client that is communicating with
+condor at port 2540
+Getting the dog file
+***
+*
+desktop > java MyTelnetClient condor.depaul.edu 80
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: condor.depaul.edu, Port: 80
+Enter text to send to server, type "stop" to end.
+GET /elliott/dog.txt HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: condor.depaul.edu:80
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.1 200 OK
+Date: Sun, 04 Feb 2018 00:03:40 GMT
+Server: Apache/2.2.3 (Red Hat)
+Last-Modified: Wed, 07 Oct 2015 20:29:55 GMT
+ETag: "8a1bfc-30-521899bff76c0"
+Accept-Ranges: bytes
+Content-Length: 48
+Content-Type: text/plain
+Connection: close
+
+This is Elliott's dog file on condor. Good job!
+
+
+
+*
+***
+Getting the cat file from condor
+***
+*
+desktop > java MyTelnetClient condor.depaul.edu 80
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: condor.depaul.edu, Port: 80
+Enter text to send to server, type "stop" to end.
+GET /elliott/cat.html HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: condor.depaul.edu:80
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.1 200 OK
+Date: Sun, 04 Feb 2018 00:09:43 GMT
+Server: Apache/2.2.3 (Red Hat)
+Last-Modified: Mon, 05 Oct 2009 20:35:03 GMT
+ETag: "8a1bed-78-475360c5dcbc0"
+Accept-Ranges: bytes
+Content-Length: 120
+Content-Type: text/html
+Connection: close
+
+<html> <body>
+<center> 
+
+<h1> This is Elliott's </h1>
+
+<h1>  CAT </h1>
+
+<h1> html file </h1>
+
+</center> 
+
+
+
+********************* MY WEB SERVER HTTP STREAM TO MYTELNET CLIENT *********************
+*
+***
+The following is captured output from MyTelnet Client that is communicating with
+my web server at port 2540
+Getting the dog file
+***
+*
+desktop > java MyTelnetClient
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: localhost, Port: 2540
+Enter text to send to server, type "stop" to end.
+GET /dog.txt HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: localhost:2540
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.0 200 OK
+Content-Type: text/plain
+Content-Length: 49
+Date: Sun Feb 04 19:33:59 CST 2018
+Server: FileServer 1.0
+
+This is Tarek's dog file on localhost. Good job!
+
+
+
+*
+***
+Getting the cat file from my web server
+***
+*
+desktop > java MyTelnetClient
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: localhost, Port: 2540
+Enter text to send to server, type "stop" to end.
+GET /cat.html HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: localhost:2540
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.0 200 OK
+Content-Type: text/html
+Content-Length: 118
+Date: Sun Feb 04 19:36:55 CST 2018
+Server: FileServer 1.0
+
+<html> <body>
+<center> 
+
+<h1> This is Tarek's </h1>
+
+<h1>  CAT </h1>
+
+<h1> html file </h1>
+
+</center> 
+<body> </html>
+
+
+
+
+*
+***
+HOME DIRECTORY
+***
+*
+desktop > java MyTelnetClient
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: localhost, Port: 2540
+Enter text to send to server, type "stop" to end.
+GET / HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: localhost:2540
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.0 200 OK
+Content-Type: text/html
+Date: Sun Feb 04 19:38:56 CST 2018
+Server: FileServer 1.0
+
+<pre><h1> Tarek Nabulsi's Server Homepage </h1><a href="./sub-a"><font face="verdana" size="5">sub-a</a> <br><br><a href="./dog.txt"><font face="verdana" size="5">dog.txt</a> <br><br><a href="./MyWebServer.class"><font face="verdana" size="5">MyWebServer.class</a> <br><br><a href="./Worker.class"><font face="verdana" size="5">Worker.class</a> <br><br><a href="./cat.html"><font face="verdana" size="5">cat.html</a> <br><br>
+
+
+
+
+*
+***
+DIRECTORY /SUB-A/SUB-B
+***
+*
+desktop > java MyTelnetClient
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: localhost, Port: 2540
+Enter text to send to server, type "stop" to end.
+GET /sub-a/sub-b HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: localhost:2540
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.0 200 OK
+Content-Type: text/html
+Date: Sun Feb 04 19:40:44 CST 2018
+Server: FileServer 1.0
+
+<pre><a href="/">Go To Homepage</a> <br><br><a href="sub-b/test.html"><font face="verdana" size="5">test.html</a> <br><br>
+
+
+
+
+*
+***
+This is sample output using the CGI addNums function in the server
+***
+*
+desktop > java MyTelnetClient
+Tarek Nabulsi's MyTelnet Client.
+
+Using server: localhost, Port: 2540
+Enter text to send to server, type "stop" to end.
+GET /cgi/addnums.fake-cgi?person=Tarek&num1=8&num2=209 HTTP/1.1
+Enter text to send to server, type "stop" to end.
+Host: localhost:2540
+Enter text to send to server, type "stop" to end.
+
+Enter text to send to server, type "stop" to end.
+stop
+HTTP/1.0 200 OK
+Content-Type: text/html
+Content-Length: 111
+Date: Sun Feb 04 19:42:31 CST 2018
+Server: FileServer 1.0
+
+<pre><font face = "verdana" size = "6" color = "DarkCyan"><h1>Hello Tarek</h1><p>The sum of 8 and 209 = 217.</p><br>

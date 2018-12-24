@@ -1,0 +1,135 @@
+********************* MY WEB SERVER OUTPUT STREAM *********************
+
+Web Server > java MyWebServer
+Tarek Nabulsi's web server starting up, listening at port 2540.
+
+
+*
+***
+HOMEPAGE is accessed after typing http://localhost:2540/
+***
+*
+GET / HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+*
+***
+DOG.TXT is accessed after clicking the link on the homepage, "dog.txt"
+***
+*
+GET /dog.txt HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:2540/
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+*
+***
+CAT.HTML is accessed after clicking the link on the homepage, "cat.html"
+***
+*
+GET /cat.html HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:2540/
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+*
+***
+SUB-A is accessed after clicking the link on the homepage, "sub-a"
+***
+*
+GET /sub-a HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:2540/
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+*
+***
+SUB-B is accessed after clicking the link in sub-a, "sub-b"
+***
+*
+GET /sub-a/sub-b HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:2540/sub-a
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+*
+***
+TEST.HTML is accessed after clicking the link in sub-b, "test.html"
+***
+*
+GET /sub-a/sub-b/test.html HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:2540/sub-a/sub-b
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+*
+***
+HOMEPAGE is accessed after clicking the link in sub-b, "Go To Homepage"
+***
+*
+GET / HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:2540/sub-a/sub-b
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+*
+***
+ADDNUMS function is called by entering cgi/addnums.fake-cgi?person=Tarek&num1=8&num2=209
+System output is displayed below.
+***
+*
+GET /cgi/addnums.fake-cgi?person=Tarek&num1=8&num2=209 HTTP/1.1
+Host: localhost:2540
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:58.0) Gecko/20100101 Firefox/58.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+
+Tarek, the sum of 8 and 209 = 217
+
